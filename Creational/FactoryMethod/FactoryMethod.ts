@@ -19,7 +19,6 @@ const factory = new IphoneFactory()
 
 const IphoneX = factory.create('X')
 const Iphone11 = factory.create('11')
-const Iphone111 = factory.create('11')
 const Iphone12 = factory.create('12')
 
 console.log(IphoneX)
