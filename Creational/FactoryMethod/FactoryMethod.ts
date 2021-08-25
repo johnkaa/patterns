@@ -8,7 +8,7 @@ class Iphone {
 }
 
 class IphoneFactory {
-    create(type) {
+    create(type): Iphone {
         if(type === 'X') return new Iphone(type, 500)
         if(type === '11') return new Iphone(type, 750)
         if(type === '12') return new Iphone(type, 1000)
