@@ -1,3 +1,9 @@
+/**
+ * Строитель — это порождающий паттерн проектирования,
+ * который позволяет создавать сложные объекты пошагово. Строитель даёт возможность
+ * использовать один и тот же код строительства для получения разных представлений объектов.
+ */
+
 interface IBuilder {
     addAutoPilot(autoPilot): void
     addSignaling(signaling): void
@@ -42,4 +48,3 @@ class Car {
     autoPilot: boolean
     signaling: boolean
 }
-
