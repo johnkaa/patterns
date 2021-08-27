@@ -9,24 +9,23 @@ class Iphone {
         this.model = model
         this.price = price
     }
-    model: string
+    model: string | number
     price: number
 }
-
-
+// commit
 class IphoneFactory {
     create(type): Iphone {
         if(type === 'X') return new Iphone(type, 500)
-        if(type === '11') return new Iphone(type, 750)
-        if(type === '12') return new Iphone(type, 1000)
+        if(type === 11) return new Iphone(type, 750)
+        if(type === 12) return new Iphone(type, 1000)
     }
 }
 
 const factory = new IphoneFactory()
 
 const IphoneX = factory.create('X')
-const Iphone11 = factory.create('11')
-const Iphone12 = factory.create('12')
+const Iphone11 = factory.create(11)
+const Iphone12 = factory.create(12)
 
 console.log(IphoneX)
 console.log(Iphone11)

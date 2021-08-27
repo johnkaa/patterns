@@ -19,11 +19,3 @@ var Counter = /** @class */ (function () {
     };
     return Counter;
 }());
-var myCount1 = new Counter();
-var myCount2 = new Counter();
-myCount1.increaseCount();
-myCount1.increaseCount();
-myCount2.increaseCount();
-myCount2.increaseCount();
-console.log(myCount1.getCount());
-console.log(myCount2.getCount());

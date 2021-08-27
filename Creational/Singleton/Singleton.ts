@@ -4,17 +4,18 @@
  */
 
 class Counter {
-    constructor() {
-        if(typeof Counter.instance === 'object') {
-            return Counter.instance
+    private constructor() {
+    }
+
+    static getInstance(): Counter {
+        if(!Counter.instance) {
+            Counter.instance = new Counter()
         }
-        this.count = 0
-        Counter.instance = this
-        return this
+        return Counter.instance
     }
 
     private static instance: Counter
-    private count: number
+    private count: number = 0
 
     getCount(): number {
         return this.count
@@ -23,15 +24,3 @@ class Counter {
         return this.count++
     }
 }
-
-const myCount1 = new Counter()
-const myCount2 = new Counter()
-
-myCount1.increaseCount()
-myCount1.increaseCount()
-myCount2.increaseCount()
-myCount2.increaseCount()
-
-
-console.log(myCount1.getCount())
-console.log(myCount2.getCount())
