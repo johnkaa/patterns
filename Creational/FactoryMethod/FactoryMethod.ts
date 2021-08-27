@@ -12,6 +12,7 @@ class Iphone {
     model: string
     price: number
 }
+// commit
 
 class IphoneFactory {
     create(type): Iphone {
