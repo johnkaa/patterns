@@ -1,35 +1,47 @@
-var CarBuilder = /** @class */ (function () {
-    function CarBuilder() {
-        this.car = new Car();
+/**
+ * Строитель — это порождающий паттерн проектирования,
+ * который позволяет создавать сложные объекты пошагово. Строитель даёт возможность
+ * использовать один и тот же код строительства для получения разных представлений объектов.
+ */
+var HumanBuilder = /** @class */ (function () {
+    function HumanBuilder() {
+        this.reset();
     }
-    CarBuilder.prototype.addAutoPilot = function (autoPilot) {
-        this.car.autoPilot = autoPilot;
+    HumanBuilder.prototype.reset = function () {
+        this.product = new Human();
     };
-    CarBuilder.prototype.addSignaling = function (signaling) {
-        this.car.signaling = signaling;
+    HumanBuilder.prototype.createBody = function () {
+        this.product.parts.push('Body');
     };
-    CarBuilder.prototype.build = function () {
-        return this.car;
+    HumanBuilder.prototype.createBrain = function () {
+        this.product.parts.push('Brain');
     };
-    return CarBuilder;
+    HumanBuilder.prototype.createHearth = function () {
+        this.product.parts.push('Hearth');
+    };
+    HumanBuilder.prototype.getProduct = function () {
+        var result = this.product;
+        this.reset();
+        return result;
+    };
+    return HumanBuilder;
 }());
-var Director = /** @class */ (function () {
-    function Director() {
+var Human = /** @class */ (function () {
+    function Human() {
+        this.parts = [];
     }
-    Director.prototype.buildMinimalViableProduct = function () {
-        this.builder.build();
+    Human.prototype.listParts = function () {
+        console.log("Human parts: " + this.parts.join(', ') + "\n");
     };
-    Director.prototype.buildFullFeaturedProduct = function () {
-        this.builder.addAutoPilot(true);
-        this.builder.addSignaling(true);
-        this.builder.build();
-    };
-    return Director;
+    return Human;
 }());
-var Car = /** @class */ (function () {
-    function Car() {
-        this.autoPilot = false;
-        this.signaling = false;
-    }
-    return Car;
-}());
+var builder = new HumanBuilder();
+console.log('Custom product:');
+builder.createBody();
+builder.createHearth();
+builder.createBrain();
+builder.getProduct().listParts();
+console.log('Custom product2:');
+builder.createBody();
+builder.createBrain();
+builder.getProduct().listParts();

@@ -4,24 +4,69 @@
  * не привязываясь к конкретным классам создаваемых объектов.
  */
 
-interface IDoor {
-    type: string
-    description(): string
+interface IFactory {
+    createDoors(): IDoors
+    createWindows(): IWindows
 }
 
-class Door implements IDoor {
-    type: string
-    description(): string {
-        return `${this.type} дверь`
+class IronFactory implements IFactory {
+    createDoors(): IDoors {
+        return new IronDoors()
+    }
+    createWindows(): IWindows {
+        return new IronWindows()
     }
 }
 
-class WoodenDoorFactory extends Door {
-    type = 'Деревянная'
-}
-class IronDoorFactory extends Door {
-    type = 'Железная'
+class WoodenFactory implements IFactory {
+    createDoors(): IDoors {
+        return new WoodenDoors()
+    }
+    createWindows(): IWindows {
+        return new WoodenWindows()
+    }
 }
 
-const ironDoor: IronDoorFactory = new IronDoorFactory()
-const woodenDoor: WoodenDoorFactory = new WoodenDoorFactory()
+interface IDoors {
+    open(): string
+    close(): string
+}
+
+class IronDoors implements IDoors {
+    open() {
+        return 'open'
+    }
+    close() {
+        return 'close'
+    }
+}
+class WoodenDoors implements IDoors {
+    open() {
+        return 'open'
+    }
+    close() {
+        return 'close'
+    }
+}
+
+interface IWindows {
+    open(): string
+    close(): string
+}
+
+class IronWindows implements IWindows {
+    open() {
+        return 'open'
+    }
+    close() {
+        return 'close'
+    }
+}
+class WoodenWindows implements IWindows {
+    open() {
+        return 'open'
+    }
+    close() {
+        return 'close'
+    }
+}

@@ -1,62 +1,47 @@
 <mxfile host="65bd71144e">
     <diagram id="PvjuZgUkLmC0_rg9OBQa" name="Страница 1">
-        <mxGraphModel dx="1118" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+        <mxGraphModel dx="598" dy="432" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;IBuilder&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+&amp;nbsp;&amp;nbsp;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;addAutoPilot&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;boolean&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;): &lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace ; font-style: italic&quot;&gt;void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+&amp;nbsp;&amp;nbsp;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;addSignaling&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;boolean&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;): &lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace ; font-style: italic&quot;&gt;void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;+ build&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;(): &lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;Car&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="390" y="80" width="240" height="170" as="geometry"/>
+                <mxCell id="2" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;IBuilder&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+&amp;nbsp; &lt;font face=&quot;jetbrains mono, monospace&quot;&gt;createBody(): void&lt;/font&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+&amp;nbsp;&amp;nbsp;&lt;font face=&quot;jetbrains mono, monospace&quot;&gt;createBrain(): void&lt;/font&gt;&lt;font face=&quot;jetbrains mono, monospace&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+&amp;nbsp;&amp;nbsp;&lt;font face=&quot;jetbrains mono, monospace&quot;&gt;createHearth(): void&lt;/font&gt;&lt;font face=&quot;jetbrains mono, monospace&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="80" width="240" height="170" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="Director" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#f0f0f0;" vertex="1" parent="1">
-                    <mxGeometry x="760" y="80" width="210" height="130" as="geometry"/>
+                <mxCell id="13" value="HumanBuilder&#10;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#f0f0f0;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="310" width="200" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="- builder: CarBuilder" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="4">
-                    <mxGeometry y="26" width="210" height="26" as="geometry"/>
-                </mxCell>
-                <mxCell id="6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="4">
-                    <mxGeometry y="52" width="210" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="7" value="+ buildMinimalViableProduct(): void&#10;+ buildFullFeaturedProduct(): void&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="4">
-                    <mxGeometry y="60" width="210" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="9" value="Car" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#f0f0f0;" vertex="1" parent="1">
-                    <mxGeometry x="410" y="530" width="200" height="110" as="geometry"/>
-                </mxCell>
-                <mxCell id="10" value="+ autoPilot: boolean&#10;+ signaling: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="9">
-                    <mxGeometry y="26" width="200" height="34" as="geometry"/>
-                </mxCell>
-                <mxCell id="11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="9">
-                    <mxGeometry y="60" width="200" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="13" value="CarBuilder" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#f0f0f0;" vertex="1" parent="1">
-                    <mxGeometry x="410" y="310" width="200" height="138" as="geometry"/>
-                </mxCell>
-                <mxCell id="14" value="- result: Car&#10;+ car: Car" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="13">
+                <mxCell id="14" value="- product: Human" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="13" vertex="1">
                     <mxGeometry y="26" width="200" height="44" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="13">
+                <mxCell id="15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="13" vertex="1">
                     <mxGeometry y="70" width="200" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="+  addAutoPilot(boolean): void&#10;+  addSignaling(boolean): void&#10;+  build(): Car" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="13">
-                    <mxGeometry y="78" width="200" height="60" as="geometry"/>
+                <mxCell id="16" value="+ reset(): void&#10;+ createBody(): void&#10;+ createBrain(): void&#10;+ createHearth(): void&#10;+ getProduct() Human" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="13" vertex="1">
+                    <mxGeometry y="78" width="200" height="82" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;fontColor=#f0f0f0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="13" target="2">
+                <mxCell id="17" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;fontColor=#f0f0f0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="13" target="2" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="530" y="310" as="sourcePoint"/>
                         <mxPoint x="690" y="310" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="25" value="" style="endArrow=open;endFill=1;endSize=12;html=1;fontColor=#f0f0f0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="2">
+                <mxCell id="27" value="" style="endArrow=open;endFill=1;endSize=12;html=1;fontColor=#f0f0f0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1" target="29">
                     <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="760" y="165" as="sourcePoint"/>
-                        <mxPoint x="830" y="250" as="targetPoint"/>
+                        <mxPoint x="500" y="470" as="sourcePoint"/>
+                        <mxPoint x="500" y="630" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="27" value="" style="endArrow=open;endFill=1;endSize=12;html=1;fontColor=#f0f0f0;" edge="1" parent="1">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="490" y="528" as="sourcePoint"/>
-                        <mxPoint x="490" y="449" as="targetPoint"/>
-                    </mxGeometry>
+                <mxCell id="29" value="Human" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="540" width="160" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="+ parts: string[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="29">
+                    <mxGeometry y="26" width="160" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="29">
+                    <mxGeometry y="52" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="+ listsParts(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="29">
+                    <mxGeometry y="60" width="160" height="26" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

@@ -5,46 +5,52 @@
  */
 
 interface IBuilder {
-    addAutoPilot(autoPilot): void
-    addSignaling(signaling): void
-    build(): Car
+    createBody(): void
+    createBrain(): void
+    createHearth(): void
 }
 
-class CarBuilder implements IBuilder {
+class HumanBuilder implements IBuilder {
+    private product: Human
     constructor() {
-        this.car = new Car()
+        this.reset()
     }
-    car: Car
-    addAutoPilot(autoPilot: boolean): void {
-        this.car.autoPilot = autoPilot
+    reset(): void {
+        this.product = new Human()
     }
-    addSignaling(signaling: boolean): void {
-        this.car.signaling = signaling
+    createBody(): void {
+        this.product.parts.push('Body')
     }
-    build(): Car {
-        return this.car
+    createBrain(): void {
+        this.product.parts.push('Brain')
     }
-}
-
-class Director {
-    private builder: CarBuilder
-
-    buildMinimalViableProduct(): void {
-        this.builder.build()
+    createHearth(): void {
+        this.product.parts.push('Hearth')
     }
-
-    buildFullFeaturedProduct(): void {
-        this.builder.addAutoPilot(true)
-        this.builder.addSignaling(true)
-        this.builder.build()
+    getProduct(): Human {
+        const result = this.product
+        this.reset()
+        return result
     }
 }
 
-class Car {
-    constructor() {
-        this.autoPilot = false
-        this.signaling = false
+class Human {
+    parts: string[] = []
+
+    listParts(): void {
+        console.log(`Human parts: ${this.parts.join(', ')}\n`)
     }
-    autoPilot: boolean
-    signaling: boolean
 }
+
+const builder = new HumanBuilder()
+
+console.log('Custom product:')
+builder.createBody()
+builder.createHearth()
+builder.createBrain()
+builder.getProduct().listParts()
+
+console.log('Custom product2:')
+builder.createBody()
+builder.createBrain()
+builder.getProduct().listParts()

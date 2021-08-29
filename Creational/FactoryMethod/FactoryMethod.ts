@@ -12,7 +12,7 @@ class Iphone {
     model: string | number
     price: number
 }
-// commit
+
 class IphoneFactory {
     create(type): Iphone {
         if(type === 'X') return new Iphone(type, 500)

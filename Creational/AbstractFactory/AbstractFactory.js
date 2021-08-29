@@ -1,43 +1,71 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Door = /** @class */ (function () {
-    function Door() {
+/**
+ * Абстрактная фабрика — это порождающий паттерн проектирования,
+ * который позволяет создавать семейства связанных объектов,
+ * не привязываясь к конкретным классам создаваемых объектов.
+ */
+var IronFactory = /** @class */ (function () {
+    function IronFactory() {
     }
-    Door.prototype.description = function () {
-        return this.type + " \u0434\u0432\u0435\u0440\u044C";
+    IronFactory.prototype.createDoors = function () {
+        return new IronDoors();
     };
-    return Door;
+    IronFactory.prototype.createWindows = function () {
+        return new IronWindows();
+    };
+    return IronFactory;
 }());
-var WoodenDoorFactory = /** @class */ (function (_super) {
-    __extends(WoodenDoorFactory, _super);
-    function WoodenDoorFactory() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.type = 'Деревянная';
-        return _this;
+var WoodenFactory = /** @class */ (function () {
+    function WoodenFactory() {
     }
-    return WoodenDoorFactory;
-}(Door));
-var IronDoorFactory = /** @class */ (function (_super) {
-    __extends(IronDoorFactory, _super);
-    function IronDoorFactory() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.type = 'Железная';
-        return _this;
+    WoodenFactory.prototype.createDoors = function () {
+        return new WoodenDoors();
+    };
+    WoodenFactory.prototype.createWindows = function () {
+        return new WoodenWindows();
+    };
+    return WoodenFactory;
+}());
+var IronDoors = /** @class */ (function () {
+    function IronDoors() {
     }
-    return IronDoorFactory;
-}(Door));
-var ironDoor = new IronDoorFactory();
-var woodenDoor = new WoodenDoorFactory();
+    IronDoors.prototype.open = function () {
+        return 'open';
+    };
+    IronDoors.prototype.close = function () {
+        return 'close';
+    };
+    return IronDoors;
+}());
+var WoodenDoors = /** @class */ (function () {
+    function WoodenDoors() {
+    }
+    WoodenDoors.prototype.open = function () {
+        return 'open';
+    };
+    WoodenDoors.prototype.close = function () {
+        return 'close';
+    };
+    return WoodenDoors;
+}());
+var IronWindows = /** @class */ (function () {
+    function IronWindows() {
+    }
+    IronWindows.prototype.open = function () {
+        return 'open';
+    };
+    IronWindows.prototype.close = function () {
+        return 'close';
+    };
+    return IronWindows;
+}());
+var WoodenWindows = /** @class */ (function () {
+    function WoodenWindows() {
+    }
+    WoodenWindows.prototype.open = function () {
+        return 'open';
+    };
+    WoodenWindows.prototype.close = function () {
+        return 'close';
+    };
+    return WoodenWindows;
+}());

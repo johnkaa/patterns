@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="5iiTeBEJbKmj-JdNtFyN" name="Страница 1">
-        <mxGraphModel dx="1374" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="222" dy="518" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -22,11 +22,10 @@
                 <mxCell id="9" value="+ create(type): Iphone" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="6" vertex="1">
                     <mxGeometry y="34" width="230" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;fontSize=11;noLabel=1;fontColor=none;" parent="1" edge="1">
-                    <mxGeometry x="-0.0101" width="160" relative="1" as="geometry">
-                        <mxPoint x="397" y="319" as="sourcePoint"/>
-                        <mxPoint x="397" y="220" as="targetPoint"/>
-                        <mxPoint as="offset"/>
+                <mxCell id="24" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;noLabel=1;fontColor=none;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="6">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="310" y="270" as="sourcePoint"/>
+                        <mxPoint x="395" y="220" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>
