@@ -24,27 +24,27 @@ var Engine = /** @class */ (function () {
     };
     return Engine;
 }());
-var OnStartCommand = /** @class */ (function () {
-    function OnStartCommand(engine) {
+var OnEngineCommand = /** @class */ (function () {
+    function OnEngineCommand(engine) {
         this.engine = engine;
     }
-    OnStartCommand.prototype.execute = function () {
+    OnEngineCommand.prototype.execute = function () {
         this.engine.on();
     };
-    return OnStartCommand;
+    return OnEngineCommand;
 }());
-var OffStartCommand = /** @class */ (function () {
-    function OffStartCommand(engine) {
+var OffEngineCommand = /** @class */ (function () {
+    function OffEngineCommand(engine) {
         this.engine = engine;
     }
-    OffStartCommand.prototype.execute = function () {
+    OffEngineCommand.prototype.execute = function () {
         this.engine.off();
     };
-    return OffStartCommand;
+    return OffEngineCommand;
 }());
 var engine = new Engine();
 console.log(engine);
-var onStartCommand = new OnStartCommand(engine);
+var onStartCommand = new OnEngineCommand(engine);
 var driver = new Driver(onStartCommand);
 driver.execute();
 console.log(engine);

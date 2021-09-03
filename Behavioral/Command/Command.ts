@@ -5,7 +5,7 @@
  */
 
 class Driver {
-    command: any
+    command: ICommand
     constructor(command) {
         this.command = command
     }
@@ -19,15 +19,20 @@ class Engine {
     constructor() {
         this.state = false
     }
-    on() {
+    on(): void {
         this.state = true
     }
-    off() {
+    off(): void {
         this.state = false
     }
 }
 
-class OnStartCommand {
+interface ICommand {
+    engine: Engine
+    execute(): void
+}
+
+class OnEngineCommand implements ICommand{
     engine: Engine
     constructor(engine: Engine) {
         this.engine = engine
@@ -37,7 +42,7 @@ class OnStartCommand {
     }
 }
 
-class OffStartCommand {
+class OffEngineCommand implements ICommand{
     engine: Engine
     constructor(engine: Engine) {
         this.engine = engine
@@ -50,7 +55,7 @@ class OffStartCommand {
 const engine = new Engine()
 console.log(engine)
 
-const onStartCommand = new OnStartCommand(engine)
+const onStartCommand = new OnEngineCommand(engine)
 let driver = new Driver(onStartCommand)
 driver.execute()
 console.log(engine)
