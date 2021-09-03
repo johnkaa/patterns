@@ -4,12 +4,12 @@
  * после чего алгоритмы можно взаимозаменять прямо во время исполнения программы.
  */
 
-interface Route {
+interface IRoute {
     type: string
     buildRoute(A: string, B: string)
 }
 
-class CarRoute implements Route {
+class CarRoute implements IRoute {
     constructor() {
         this.type = 'Car'
     }
@@ -18,7 +18,7 @@ class CarRoute implements Route {
         console.log(`Car route from ${A} to ${B} successfully built`)
     }
 }
-class AirportRoute implements Route {
+class AirportRoute implements IRoute {
     constructor() {
         this.type = 'Airport'
     }
@@ -27,7 +27,7 @@ class AirportRoute implements Route {
         console.log(`Air route from ${A} to ${B} successfully built`)
     }
 }
-class WalkingRoute implements Route {
+class WalkingRoute implements IRoute {
     constructor() {
         this.type = 'Walking'
     }
@@ -38,12 +38,12 @@ class WalkingRoute implements Route {
 }
 
 class Nav {
-    constructor(route: Route) {
+    constructor(route: IRoute) {
         this.route = route
     }
-    private route: Route
+    private route: IRoute
 
-    setNavigation(route: Route): void {
+    setNavigation(route: IRoute): void {
         this.route = route
     }
     doNavigation(): void {
