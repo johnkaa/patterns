@@ -4,42 +4,54 @@
  * над которыми эти операции могут выполняться.
  */
 
-abstract class Auto {
-    accept(visitor): void {
-        visitor(this)
-    }
-    export
+interface IVisitor {
+    visitIphone(e: Iphone): void
+    visitSamsung(e: Samsung): void
+    visitHuawei(e: Huawei): void
 }
 
-class Tesla extends Auto {
+class Visitor implements IVisitor {
+    visitIphone(e: Iphone): void {
+        console.log(`Exported data: ${e.info()}`)
+    }
+    visitSamsung(e: Samsung): void {
+        console.log(`Exported data: ${e.info()}`)
+    }
+    visitHuawei(e: Huawei): void {
+        console.log(`Exported data: ${e.info()}`)
+    }
+}
+
+interface IPhones {
+    accept(visitor: IVisitor): void
+}
+
+class Iphone implements IPhones {
     info(): string {
         return 'It is a Tesla!'
     }
+    accept(visitor: IVisitor): void {
+        visitor.visitIphone(this)
+    }
 }
 
-class BMW extends Auto {
+class Samsung implements IPhones {
     info(): string {
         return 'It is a BMW!'
     }
+    accept(visitor: IVisitor): void {
+        visitor.visitSamsung(this)
+    }
 }
 
-class Audi extends Auto {
+class Huawei implements IPhones {
     info(): string {
         return 'It is a Audi!'
     }
-}
-
-function exportVisitor(auto): void {
-    if(auto instanceof Tesla) {
-        auto.export = console.log(`Exported data: ${auto.info()}`)
-    }
-    if(auto instanceof BMW) {
-        auto.export = console.log(`Exported data: ${auto.info()}`)
-    }
-    if(auto instanceof Audi) {
-        auto.export = console.log(`Exported data: ${auto.info()}`)
+    accept(visitor: IVisitor): void {
+        visitor.visitHuawei(this)
     }
 }
 
-const tesla = new Tesla()
-exportVisitor(tesla)
+const visitor = new Visitor()
+visitor.visitIphone(new Iphone())

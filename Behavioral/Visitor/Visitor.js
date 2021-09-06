@@ -3,69 +3,52 @@
  * который позволяет добавлять в программу новые операции, не изменяя классы объектов,
  * над которыми эти операции могут выполняться.
  */
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Auto = /** @class */ (function () {
-    function Auto() {
+var Visitor = /** @class */ (function () {
+    function Visitor() {
     }
-    Auto.prototype.accept = function (visitor) {
-        visitor(this);
+    Visitor.prototype.visitTesla = function (e) {
+        console.log("Exported data: " + e.info());
     };
-    return Auto;
+    Visitor.prototype.visitBMW = function (e) {
+        console.log("Exported data: " + e.info());
+    };
+    Visitor.prototype.visitAudi = function (e) {
+        console.log("Exported data: " + e.info());
+    };
+    return Visitor;
 }());
-var Tesla = /** @class */ (function (_super) {
-    __extends(Tesla, _super);
+var Tesla = /** @class */ (function () {
     function Tesla() {
-        return _super !== null && _super.apply(this, arguments) || this;
     }
     Tesla.prototype.info = function () {
         return 'It is a Tesla!';
     };
+    Tesla.prototype.accept = function (visitor) {
+        visitor.visitTesla(this);
+    };
     return Tesla;
-}(Auto));
-var BMW = /** @class */ (function (_super) {
-    __extends(BMW, _super);
+}());
+var BMW = /** @class */ (function () {
     function BMW() {
-        return _super !== null && _super.apply(this, arguments) || this;
     }
     BMW.prototype.info = function () {
         return 'It is a BMW!';
     };
+    BMW.prototype.accept = function (visitor) {
+        visitor.visitBMW(this);
+    };
     return BMW;
-}(Auto));
-var Audi = /** @class */ (function (_super) {
-    __extends(Audi, _super);
+}());
+var Audi = /** @class */ (function () {
     function Audi() {
-        return _super !== null && _super.apply(this, arguments) || this;
     }
     Audi.prototype.info = function () {
         return 'It is a Audi!';
     };
+    Audi.prototype.accept = function (visitor) {
+        visitor.visitAudi(this);
+    };
     return Audi;
-}(Auto));
-function exportVisitor(auto) {
-    if (auto instanceof Tesla) {
-        auto["export"] = console.log("Exported data: " + auto.info());
-    }
-    if (auto instanceof BMW) {
-        auto["export"] = console.log("Exported data: " + auto.info());
-    }
-    if (auto instanceof Audi) {
-        auto["export"] = console.log("Exported data: " + auto.info());
-    }
-}
-var tesla = new Tesla();
-exportVisitor(tesla);
+}());
+var visitor = new Visitor();
+visitor.visitTesla(new Tesla());
