@@ -15,24 +15,18 @@ class NewCPU {
     }
 }
 
-class CPUAdapter {
+class CPUAdapter extends OldCPU {
+    private cpu: NewCPU
     constructor(cpu) {
+        super()
         this.cpu = cpu
     }
-    cpu: NewCPU
     simpleInterface(): void {
         this.cpu.newInterface()
     }
 }
 
-class Computer {
-    startComputer(cpu): void {
-        cpu.simpleInterface()
-    }
-}
-
-const myComputer: Computer = new Computer()
 const newCPUAdapter: CPUAdapter = new CPUAdapter(new NewCPU())
 
-myComputer.startComputer(newCPUAdapter)
+newCPUAdapter.simpleInterface()
 

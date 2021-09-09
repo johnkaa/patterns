@@ -2,6 +2,21 @@
  * Адаптер — это структурный паттерн проектирования,
  * который позволяет объектам с несовместимыми интерфейсами работать вместе.
  */
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var OldCPU = /** @class */ (function () {
     function OldCPU() {
     }
@@ -18,23 +33,17 @@ var NewCPU = /** @class */ (function () {
     };
     return NewCPU;
 }());
-var CPUAdapter = /** @class */ (function () {
+var CPUAdapter = /** @class */ (function (_super) {
+    __extends(CPUAdapter, _super);
     function CPUAdapter(cpu) {
-        this.cpu = cpu;
+        var _this = _super.call(this) || this;
+        _this.cpu = cpu;
+        return _this;
     }
     CPUAdapter.prototype.simpleInterface = function () {
         this.cpu.newInterface();
     };
     return CPUAdapter;
-}());
-var Computer = /** @class */ (function () {
-    function Computer() {
-    }
-    Computer.prototype.startComputer = function (cpu) {
-        cpu.simpleInterface();
-    };
-    return Computer;
-}());
-var myComputer = new Computer();
+}(OldCPU));
 var newCPUAdapter = new CPUAdapter(new NewCPU());
-myComputer.startComputer(newCPUAdapter);
+newCPUAdapter.simpleInterface();
